@@ -1,5 +1,5 @@
 package business.control;
-
+import business.control.SingletonManter;
 public class ValidaLogin {
 
     protected static void validaLogin(String login) throws LoginException {
@@ -9,7 +9,7 @@ public class ValidaLogin {
             throw new LoginException("O login não pode ter mais de 20 caracteres!");
         } else if (login.matches(".*\\d.*")) {
             throw new LoginException("O login não pode conter numeros");
-        } else if(ManterUsuario.usuarios.containsKey(login)){
+        } else if(SingletonManter.getInstance().GetHashUsuario().containsKey(login)){
             throw new LoginException("O login inserido já existe");
         }
     }

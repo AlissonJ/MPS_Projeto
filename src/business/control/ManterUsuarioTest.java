@@ -10,7 +10,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import business.model.Usuarios;
+import business.model.Usuario;
 import infra.InfraException;
 
 public class ManterUsuarioTest {//adicionaUsuario , removeUsuario , logaUsuario, iniciaSistema

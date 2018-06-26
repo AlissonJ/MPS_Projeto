@@ -1,26 +1,25 @@
 package business.control;
 
 import java.util.HashMap;
-
+import business.control.SingletonManter;
 import business.model.Conversa;
 import infra.InfraException;
 import infra.PersistenciaConversas;
 
 public class ManterConversa {
 
-    protected static HashMap<String, Conversa> conversas = new HashMap<>();
+     
     
-    
-    
+   
     
     
     public static void excluirConversa(String idConversa) throws InfraException {
         Conversa tmp;
-        tmp = conversas.remove(idConversa);
+        tmp = SingletonManter.getInstance().GetHashConversa().remove(idConversa);
         try {
-            PersistenciaConversas.salvaConversas(conversas);
+            PersistenciaConversas.salvaConversas(SingletonManter.getInstance().GetHashConversa());
         } catch (InfraException e) {
-            conversas.put(idConversa,tmp);
+        	SingletonManter.getInstance().GetHashConversa().put(idConversa,tmp);
             throw e;
         }
     }
