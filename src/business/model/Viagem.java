@@ -4,16 +4,25 @@ import java.io.Serializable;
 
 public class Viagem implements Serializable {
 
-	private int idViagem;
+	private String idViagem;
 	private String localPartida;
 	private String LocalDestino;
 	private String horarioSaida;
 	private String quantidadeVagas;
 	
-	public int getIdViagem() {
+	public Viagem(String idViagem,String localPartida,String localDestino,String horarioSaida,
+			String quantidadedeVagas) {
+		this.idViagem = idViagem;
+		this.localPartida = localPartida;
+		this.LocalDestino = localDestino;
+		this.horarioSaida = horarioSaida;
+		this.quantidadeVagas = quantidadedeVagas;
+		
+	}
+	public String getIdViagem() {
 		return idViagem;
 	}
-	public void setIdViagem(int idViagem) {
+	public void setIdViagem(String idViagem) {
 		this.idViagem = idViagem;
 	}
 	public String getLocalPartida() {

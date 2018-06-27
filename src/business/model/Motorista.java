@@ -1,15 +1,23 @@
 package business.model;
 
-public class Motorista extends Usuarios {
+import business.model.Usuario;
+
+public class Motorista extends Usuario {
 	
+	private Usuario usuario = new Usuario;
 	private String NumeroCarteiraMotorista;
 	private String ModeloCarro;
 	private String PlacaCarro;
 	private String CorCarro;
 	
 	
-	public Motorista(String login, String senha) {
-		super(login, senha);
+	public Motorista(String login, String senha, String nome,String comprovante,
+			String numCarteira, String modelo,String placa,String cor) {
+		usuario = new Usuario(login,senha,nome,comprovante);
+		this.NumeroCarteiraMotorista = numCarteira;
+		this.ModeloCarro = modelo;
+	    this.PlacaCarro = placa;
+		this.CorCarro = cor;
 		
 	}
 
